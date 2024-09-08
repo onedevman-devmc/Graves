@@ -9,9 +9,9 @@ import org.bukkit.command.TabCompleter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SurvivalTweaksCommand implements CommandExecutor, TabCompleter {
+public class GravesCommand implements CommandExecutor, TabCompleter {
 
-    public static final String LABEL = "survivaltweaks";
+    public static final String LABEL = "graves";
 
     //
 
@@ -32,7 +32,7 @@ public class SurvivalTweaksCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(args.length == 1) {
             if(args[0].equalsIgnoreCase("reload-config")) {
-                if(sender.hasPermission("mc.eredhel.survivaltweaks.commands.survivaltweaks.reload-config")) {
+                if(sender.hasPermission("mc.graves.commands.graves.reload-config")) {
                     PluginMain.instance().reloadConfig();
                     sender.sendMessage("§aConfig reloaded.");
                 }

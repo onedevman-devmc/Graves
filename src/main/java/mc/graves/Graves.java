@@ -112,7 +112,7 @@ public class Graves implements Listener {
 
         if(
             PlayersBeingBuried.contains(player.getUniqueId())
-            || !player.hasPermission("mc.eredhel.survivaltweaks.graves.bury.self")
+            || !player.hasPermission("mc.graves.graves.bury.self")
         ) return;
 
         if(Graves.bury(player)) {

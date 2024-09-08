@@ -8,9 +8,9 @@ softdepend:
 #
 
 commands:
-  survivaltweaks:
+  graves:
     description: ''
-    usage: 'please use /survivaltweaks to show help'
+    usage: 'please use /graves to show help'
 
   #
 
@@ -21,69 +21,64 @@ commands:
 #
 
 permissions:
-  mc.eredhel.survivaltweaks.*:
+  mc.graves.*:
     description: ''
     children:
-      mc.eredhel.survivaltweaks.commands.*: true
-      mc.eredhel.survivaltweaks.graves.*: true
-      mc.eredhel.survivaltweaks.shops.*: true
+      mc.graves.commands.*: true
+      mc.graves.graves.*: true
+      mc.graves.shops.*: true
 
   #
 
-  mc.eredhel.survivaltweaks.commands.*:
+  mc.graves.commands.*:
     description: ''
     children:
-      mc.eredhel.survivaltweaks.commands.survivaltweaks.*: true
-      mc.eredhel.survivaltweaks.commands.graves.*: true
+      mc.graves.commands.graves.*: true
 
   #
 
-  mc.eredhel.survivaltweaks.commands.survivaltweaks.*:
+  mc.graves.commands.graves.*:
     description: ''
     children:
-      mc.eredhel.survivaltweaks.commands.survivaltweaks.reload-config: true
+      mc.graves.commands.graves.reload-config: true
+      mc.graves.commands.graves.bury.*: true
 
-  mc.eredhel.survivaltweaks.commands.survivaltweaks.reload-config:
+  #
+
+  mc.graves.commands.graves.reload-config:
     description: 'Allows to reload plugin config.'
     default: false
 
   #
 
-  mc.eredhel.survivaltweaks.commands.graves.*:
+  mc.graves.commands.graves.bury.*:
     description: ''
     children:
-      mc.eredhel.survivaltweaks.commands.graves.bury.*: true
+      mc.graves.commands.graves.bury.self: true
+      mc.graves.commands.graves.bury.others: true
 
-  #
-
-  mc.eredhel.survivaltweaks.commands.graves.bury.*:
-    description: ''
-    children:
-      mc.eredhel.survivaltweaks.commands.graves.bury.self: true
-      mc.eredhel.survivaltweaks.commands.graves.bury.others: true
-
-  mc.eredhel.survivaltweaks.commands.graves.bury.self:
+  mc.graves.commands.graves.bury.self:
     description: 'Allows you to bury yourself.'
     default: false
 
-  mc.eredhel.survivaltweaks.commands.graves.bury.others:
+  mc.graves.commands.graves.bury.others:
     description: 'Allows you to bury someone else.'
     default: false
 
   #
 
-  mc.eredhel.survivaltweaks.graves.*:
+  mc.graves.graves.*:
     description: ''
     children:
-      mc.eredhel.survivaltweaks.graves.bury.*: true
+      mc.graves.graves.bury.*: true
 
   #
 
-  mc.eredhel.survivaltweaks.graves.bury.*:
+  mc.graves.graves.bury.*:
     description: ''
     children:
-      mc.eredhel.survivaltweaks.graves.bury.self: true
+      mc.graves.graves.bury.self: true
 
-  mc.eredhel.survivaltweaks.graves.bury.self:
+  mc.graves.graves.bury.self:
     description: 'Allows you to be buried at your death.'
     default: false

@@ -26,14 +26,14 @@ public class BuryCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(!(sender instanceof Player player)) {
-            sender.sendMessage("§cThis command is player-only.");
-            return true;
-        }
-
         switch (args.length) {
             case 0: {
-                if(!player.hasPermission("mc.eredhel.survivaltweaks.commands.graves.bury.self")) {
+                if(!(sender instanceof Player player)) {
+                    sender.sendMessage("§cThis command is player-only.");
+                    return true;
+                }
+
+                if(!player.hasPermission("mc.graves.commands.graves.bury.self")) {
                     player.sendMessage("§cYou don't have permission to use this command.");
                     return true;
                 }
@@ -43,12 +43,19 @@ public class BuryCommand implements CommandExecutor, TabCompleter {
                 break;
             }
             case 1: {
-                if(!player.hasPermission("mc.eredhel.survivaltweaks.commands.graves.bury.others")) {
-                    player.sendMessage("§cYou don't have permission to use this command.");
+                if(!sender.hasPermission("mc.graves.commands.graves.bury.others")) {
+                    sender.sendMessage("§cYou don't have permission to use this command.");
                     return true;
                 }
 
+                Player target = Bukkit.getPlayer(args[0]);
+                if(target == null) {
+                    sender.sendMessage("§cPlayer not found.");
+                    return true;
+                }
 
+                Graves.bury(target);
+                sender.sendMessage("§e" + target.getName() + "§a has been buried successfully.");
 
                 break;
             }
