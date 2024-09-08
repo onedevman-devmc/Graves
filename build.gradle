@@ -89,7 +89,7 @@ shadowJar {
 
     //
 
-    if(project.ext.isReleaseBuild) relocate('mc.compendium', 'mc.barrelshop.compendium')
+    if(project.ext.isReleaseBuild) relocate('mc.compendium', 'mc.graves.compendium')
 }
 
 spigotRemap {

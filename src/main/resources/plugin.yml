@@ -25,8 +25,7 @@ permissions:
     description: ''
     children:
       mc.graves.commands.*: true
-      mc.graves.graves.*: true
-      mc.graves.shops.*: true
+      mc.graves.bury.*: true
 
   #
 
@@ -67,18 +66,11 @@ permissions:
 
   #
 
-  mc.graves.graves.*:
+  mc.graves.bury.*:
     description: ''
     children:
-      mc.graves.graves.bury.*: true
+      mc.graves.bury.self: true
 
-  #
-
-  mc.graves.graves.bury.*:
-    description: ''
-    children:
-      mc.graves.graves.bury.self: true
-
-  mc.graves.graves.bury.self:
+  mc.graves.bury.self:
     description: 'Allows you to be buried at your death.'
     default: false
