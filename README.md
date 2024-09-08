@@ -36,7 +36,7 @@ graves:
 
 </details>
 
-<details open>
+<details>
     <summary><strong><i>mc.graves.commands.*</i></strong></summary>
 
 | Permission                  | Description                                   |
@@ -55,7 +55,7 @@ graves:
 
 </details>
 
-<details>
+<details open>
     <summary><strong><i>mc.graves.commands.graves.bury.*</i></strong></summary>
 
 | Permission                            | Description                                    |
@@ -65,7 +65,7 @@ graves:
 
 </details>
 
-<details>
+<details open>
     <summary><strong><i>mc.graves.bury.*</i></i></strong></summary>
 
 | Permission          | Description                       |
