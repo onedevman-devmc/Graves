@@ -1,0 +1,89 @@
+name: Graves
+version: 0.0.1-beta1
+main: mc.graves.PluginMain
+api-version: 1.20
+softdepend:
+  - Compendium
+
+#
+
+commands:
+  survivaltweaks:
+    description: ''
+    usage: 'please use /survivaltweaks to show help'
+
+  #
+
+  bury:
+    description: 'Allows to bury yourself or another player.'
+    usage: '/bury | /bury <player>'
+
+#
+
+permissions:
+  mc.eredhel.survivaltweaks.*:
+    description: ''
+    children:
+      mc.eredhel.survivaltweaks.commands.*: true
+      mc.eredhel.survivaltweaks.graves.*: true
+      mc.eredhel.survivaltweaks.shops.*: true
+
+  #
+
+  mc.eredhel.survivaltweaks.commands.*:
+    description: ''
+    children:
+      mc.eredhel.survivaltweaks.commands.survivaltweaks.*: true
+      mc.eredhel.survivaltweaks.commands.graves.*: true
+
+  #
+
+  mc.eredhel.survivaltweaks.commands.survivaltweaks.*:
+    description: ''
+    children:
+      mc.eredhel.survivaltweaks.commands.survivaltweaks.reload-config: true
+
+  mc.eredhel.survivaltweaks.commands.survivaltweaks.reload-config:
+    description: 'Allows to reload plugin config.'
+    default: false
+
+  #
+
+  mc.eredhel.survivaltweaks.commands.graves.*:
+    description: ''
+    children:
+      mc.eredhel.survivaltweaks.commands.graves.bury.*: true
+
+  #
+
+  mc.eredhel.survivaltweaks.commands.graves.bury.*:
+    description: ''
+    children:
+      mc.eredhel.survivaltweaks.commands.graves.bury.self: true
+      mc.eredhel.survivaltweaks.commands.graves.bury.others: true
+
+  mc.eredhel.survivaltweaks.commands.graves.bury.self:
+    description: 'Allows you to bury yourself.'
+    default: false
+
+  mc.eredhel.survivaltweaks.commands.graves.bury.others:
+    description: 'Allows you to bury someone else.'
+    default: false
+
+  #
+
+  mc.eredhel.survivaltweaks.graves.*:
+    description: ''
+    children:
+      mc.eredhel.survivaltweaks.graves.bury.*: true
+
+  #
+
+  mc.eredhel.survivaltweaks.graves.bury.*:
+    description: ''
+    children:
+      mc.eredhel.survivaltweaks.graves.bury.self: true
+
+  mc.eredhel.survivaltweaks.graves.bury.self:
+    description: 'Allows you to be buried at your death.'
+    default: false
